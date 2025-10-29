@@ -8,11 +8,6 @@ export default function StickyMobileCTA() {
   const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
 
-  // Don't show on the quote page itself
-  if (pathname === "/get-quote") {
-    return null;
-  }
-
   useEffect(() => {
     const handleScroll = () => {
       // Show button after scrolling down 300px
@@ -22,6 +17,11 @@ export default function StickyMobileCTA() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Don't show on the quote page itself
+  if (pathname === "/get-quote") {
+    return null;
+  }
 
   return (
     <div
