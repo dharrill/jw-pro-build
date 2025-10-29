@@ -5,24 +5,123 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
   }
-  
+
   body {
-    @apply bg-background-warm text-gray-900;
+    @apply bg-background-warm text-accent-gray antialiased;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl font-bold text-black leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold text-black leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold text-black leading-tight;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-semibold text-black leading-tight;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
   }
 }
 
 @layer components {
+  /* Container */
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
+  /* Buttons */
   .btn-primary {
-    @apply bg-primary-yellow text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500 transition-colors;
+    @apply bg-primary-yellow text-black font-bold px-8 py-4 rounded-lg
+           hover:bg-yellow-400 active:bg-yellow-500
+           transition-all duration-200
+           shadow-md hover:shadow-lg
+           text-base md:text-lg
+           inline-flex items-center justify-center
+           min-h-[56px];
   }
-  
+
   .btn-secondary {
-    @apply border-2 border-primary-black text-black font-semibold px-6 py-3 rounded-lg hover:bg-primary-black hover:text-white transition-colors;
+    @apply border-2 border-black text-black font-semibold px-8 py-4 rounded-lg
+           hover:bg-black hover:text-white
+           transition-all duration-200
+           text-base md:text-lg
+           inline-flex items-center justify-center
+           min-h-[56px];
+  }
+
+  .btn-emergency {
+    @apply bg-accent-red text-white font-bold px-8 py-4 rounded-lg
+           hover:bg-red-600 active:bg-red-700
+           transition-all duration-200
+           shadow-md hover:shadow-lg
+           text-base md:text-lg
+           inline-flex items-center justify-center
+           min-h-[56px];
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-gray-200;
+  }
+
+  .card-yellow {
+    @apply bg-primary-yellow text-black rounded-lg shadow-md p-6 border-2 border-black;
+  }
+
+  /* Trust badges */
+  .badge-trust {
+    @apply inline-flex items-center gap-2 text-sm font-medium
+           px-4 py-2 rounded-full bg-black text-white;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-alt {
+    @apply py-16 md:py-24 bg-white;
+  }
+
+  /* Typography utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Yellow accent line */
+  .border-yellow-accent {
+    @apply border-l-4 border-primary-yellow pl-4;
+  }
+
+  /* Focus states for accessibility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2;
+  }
+}
+
+@layer utilities {
+  /* Custom gradient overlays */
+  .gradient-dark {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  }
+
+  .gradient-yellow-subtle {
+    background: linear-gradient(to right, #FFFEF7, #FFFFFF);
+  }
+
+  /* Touch targets for mobile */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
   }
 }
 
