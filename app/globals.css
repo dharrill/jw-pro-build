@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background-warm text-gray-900;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-yellow text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-primary-black text-black font-semibold px-6 py-3 rounded-lg hover:bg-primary-black hover:text-white transition-colors;
+  }
+}
+
