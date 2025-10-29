@@ -23,9 +23,9 @@ export default function CTASection() {
             <button className="btn-primary text-lg">
               Get Emergency Quote
             </button>
-            <button className="btn-secondary bg-transparent border-primary-yellow text-primary-yellow hover:bg-primary-yellow hover:text-black">
-              Call Now: (555) 123-4567
-            </button>
+            <a href="tel:2193448058" className="btn-secondary bg-transparent border-primary-yellow text-primary-yellow hover:bg-primary-yellow hover:text-black">
+              Call Now: (219) 344-8058
+            </a>
           </div>
 
           {/* Trust indicators */}

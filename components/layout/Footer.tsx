@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,14 +11,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary-yellow rounded-lg flex items-center justify-center font-bold text-black text-xl">
-                JW
-              </div>
-              <div className="flex flex-col leading-tight">
-                <span className="font-bold text-lg">JW ProBuild</span>
-                <span className="text-xs text-gray-400">Bank Inspection Repairs</span>
-              </div>
+            <div className="mb-4">
+              <Logo size="sm" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Licensed contractors specializing in bank-mandated inspection repairs for multi-family properties.
@@ -78,10 +73,10 @@ export default function Footer() {
               <div>
                 <p className="text-gray-500 mb-1">Emergency Quote</p>
                 <a
-                  href="tel:5551234567"
+                  href="tel:2193448058"
                   className="text-primary-yellow font-semibold hover:underline text-lg"
                 >
-                  (555) 123-4567
+                  (219) 344-8058
                 </a>
               </div>
               <div>

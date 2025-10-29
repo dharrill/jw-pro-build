@@ -45,7 +45,7 @@ export default function LeadCaptureForm() {
     } catch (error) {
       setSubmitMessage({
         type: "error",
-        text: "Something went wrong. Please call us at (555) 123-4567 or try again.",
+        text: "Something went wrong. Please call us at (219) 344-8058 or try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -230,7 +230,7 @@ export default function LeadCaptureForm() {
             {...register("phone")}
             type="tel"
             id="phone"
-            placeholder="(555) 123-4567"
+            placeholder="(219) 344-8058"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus-ring"
           />
           {errors.phone && (

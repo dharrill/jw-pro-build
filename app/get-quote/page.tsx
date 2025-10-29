@@ -96,8 +96,8 @@ export default function GetQuotePage() {
                   <h3 className="text-xl font-bold text-black mb-2">Need Urgent Repairs?</h3>
                   <p className="text-black text-base">
                     Get a quote within 24 hours. Call us directly:{" "}
-                    <a href="tel:5551234567" className="font-bold underline">
-                      (555) 123-4567
+                    <a href="tel:2193448058" className="font-bold underline">
+                      (219) 344-8058
                     </a>
                   </p>
                 </div>
