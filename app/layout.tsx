@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JW ProBuild | Bank-Mandated Inspection Repairs for Multi-Family Properties",
-  description: "Licensed contractors specializing in bank-mandated inspection repairs for apartment complexes and multi-family properties. Prevent foreclosure. Get compliant. On time.",
+  title: "Commercial Apartment Repairs | Multi-Family Property Inspection Contractor",
+  description: "Licensed commercial apartment repair contractor. Bank-mandated inspection repairs for apartment complexes, senior living, and multi-family properties. Emergency service available.",
 };
 
 export default function RootLayout({

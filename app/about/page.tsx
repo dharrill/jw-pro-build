@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us | JW ProBuild - Licensed Inspection Repair Specialists",
-  description: "Learn about JW ProBuild's expertise in bank-mandated inspection repairs for multi-family properties. Licensed, insured, and trusted by 15+ lending institutions.",
+  title: "About JW ProBuild | Licensed Commercial Apartment Repair Contractor",
+  description: "Licensed commercial apartment repair contractor specializing in multi-family property inspections. 500+ properties completed, trusted by 15+ lending institutions.",
 };
 
 export default function AboutPage() {

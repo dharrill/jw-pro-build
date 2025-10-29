@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "For Lenders | JW ProBuild - Partner With Us for Borrower Inspection Repairs",
-  description: "Lending institutions trust JW ProBuild for reliable, fast inspection repair services. Reduce default risk with our proven multi-family property expertise.",
+  title: "For Lenders | Commercial Apartment Repair Contractor Partnership",
+  description: "Partner with licensed commercial apartment repair contractor. Fast inspection repairs for multi-family properties reduce default risk. Trusted by 15+ lending institutions.",
 };
 
 export default function LendersPage() {

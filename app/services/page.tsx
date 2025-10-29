@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Services | JW ProBuild - Comprehensive Inspection Repair Services",
-  description: "All-trades capability for bank-mandated inspection repairs. Structural, plumbing, electrical, HVAC, fire safety, parking, and interior repairs for multi-family properties.",
+  title: "Commercial Apartment Repair Services | Multi-Family Property Inspection Repairs",
+  description: "Licensed commercial apartment repair contractor for multi-family properties. Bank-mandated inspection repairs, building code compliance, and emergency apartment complex repairs.",
 };
 
 export default function ServicesPage() {
@@ -101,10 +101,10 @@ export default function ServicesPage() {
         <div className="container-custom">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Comprehensive <span className="text-primary-yellow">Repair Services</span>
+              Commercial Apartment <span className="text-primary-yellow">Repair Services</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              All trades, one contractor. We handle every aspect of your bank-mandated inspection repairs.
+              Licensed contractor for multi-family property repairs. All trades, one contractor, complete compliance with bank-mandated inspections.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/get-quote" className="btn-primary">

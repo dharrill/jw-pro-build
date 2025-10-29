@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact Us | JW ProBuild - Get Your Emergency Quote Today",
-  description: "Contact JW ProBuild for bank-mandated inspection repairs. Call (219) 344-8058 for emergency quotes. Response within 2 hours.",
+  title: "Contact Us | Commercial Apartment Repair Emergency Service",
+  description: "Contact commercial apartment repair contractor for emergency service. Call (219) 344-8058 for multi-family property inspection repairs. Response within 2 hours.",
 };
 
 export default function ContactPage() {

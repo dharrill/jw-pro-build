@@ -2,8 +2,8 @@ import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Get Emergency Quote | JW ProBuild - Bank Inspection Repairs",
-  description: "Get a fast quote for your bank-mandated inspection repairs. Response within 2 hours, quote within 24 hours. Licensed for all trades.",
+  title: "Get Emergency Quote | Commercial Apartment Repair Contractor",
+  description: "Fast quote for commercial apartment repairs and multi-family property inspection violations. Response within 2 hours. Licensed contractor for all trades.",
 };
 
 export default function GetQuotePage() {

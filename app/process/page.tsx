@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Our Process | JW ProBuild - How We Handle Inspection Repairs",
-  description: "Step-by-step process for bank-mandated inspection repairs. From initial assessment to compliance verification, we guide you through every stage.",
+  title: "Commercial Apartment Repair Process | Multi-Family Inspection Compliance",
+  description: "Step-by-step commercial apartment repair process for bank-mandated inspections. From assessment to compliance verification for multi-family properties.",
 };
 
 export default function ProcessPage() {
