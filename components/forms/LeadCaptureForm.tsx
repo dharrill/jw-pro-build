@@ -14,12 +14,13 @@ export default function LeadCaptureForm() {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<LeadFormData>({
+  } = useForm({
     resolver: zodResolver(leadFormSchema),
     defaultValues: {
       isUrgent: false,
       repairTypes: [],
     },
+    mode: "onBlur",
   });
 
   const onSubmit = async (data: LeadFormData) => {
@@ -27,25 +28,46 @@ export default function LeadCaptureForm() {
     setSubmitMessage(null);
 
     try {
-      const response = await fetch("/api/submit-lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      // For static site: Create mailto link with form data
+      const emailBody = `
+New Lead Submission - JW ProBuild
 
-      if (response.ok) {
-        setSubmitMessage({
-          type: "success",
-          text: "Thank you! We'll contact you within 2 hours to discuss your inspection repairs.",
-        });
-        reset();
-      } else {
-        throw new Error("Submission failed");
-      }
+Property Details:
+- Address: ${data.propertyAddress}
+- Type: ${data.propertyType}
+- Size: ${data.propertySize} units
+- Inspection Deadline: ${data.inspectionDeadline}
+
+Repairs Needed:
+${data.repairTypes.join(", ")}
+
+Situation:
+${data.currentSituation}
+
+Contact Information:
+- Name: ${data.name}
+- Email: ${data.email}
+- Phone: ${data.phone}
+
+Urgency: ${data.isUrgent ? "URGENT - Deadline Approaching!" : "Standard"}
+      `.trim();
+
+      const mailtoLink = `mailto:info@jwprobuild.com?subject=Emergency Quote Request - ${data.propertyAddress}&body=${encodeURIComponent(emailBody)}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+
+      // Show success message
+      setSubmitMessage({
+        type: "success",
+        text: "Your email client should open. If not, please call us at (219) 344-8058. We'll contact you within 2 hours!",
+      });
+      
+      reset();
     } catch (error) {
       setSubmitMessage({
         type: "error",
-        text: "Something went wrong. Please call us at (219) 344-8058 or try again.",
+        text: "Please call us directly at (219) 344-8058 for immediate assistance.",
       });
     } finally {
       setIsSubmitting(false);

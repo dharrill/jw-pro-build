@@ -34,28 +34,18 @@ export default function ChatWindow({ messages, setMessages, onClose }: ChatWindo
     setInput("");
     setIsLoading(true);
 
-    try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: [...messages, userMessage] }),
-      });
-
-      if (!response.ok) throw new Error("Failed to get response");
-
-      const data = await response.json();
-      setMessages((prev) => [...prev, { role: "assistant", content: data.message }]);
-    } catch (error) {
+    // For static site: Simulate response (no API call)
+    setTimeout(() => {
+      setIsLoading(false);
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: "I'm having trouble connecting right now. Please call us at (219) 344-8058 for immediate assistance.",
+          content:
+            "Thank you for your question! For immediate assistance with bank-mandated inspection repairs, please call us at (219) 344-8058. Our team is available 24/7 for urgent repairs. We'll assess your property and provide a quote within 24 hours.",
         },
       ]);
-    } finally {
-      setIsLoading(false);
-    }
+    }, 500);
   };
 
   return (

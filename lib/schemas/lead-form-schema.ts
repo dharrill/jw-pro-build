@@ -9,8 +9,8 @@ export const leadFormSchema = z.object({
     "student-housing",
     "affordable-housing",
     "other",
-  ], {
-    required_error: "Please select a property type",
+  ]).refine((val) => val !== undefined, {
+    message: "Please select a property type",
   }),
   propertySize: z.string().min(1, "Please enter the number of units"),
 
@@ -29,7 +29,7 @@ export const leadFormSchema = z.object({
   phone: z.string().min(10, "Please enter a valid phone number"),
 
   // Urgency flag
-  isUrgent: z.boolean().default(false),
+  isUrgent: z.boolean().optional().default(false),
 });
 
 export type LeadFormData = z.infer<typeof leadFormSchema>;
