@@ -96,24 +96,32 @@ export default function ServicesPage() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-black text-white py-16 md:py-24">
+      {/* Hero Section - Split Heading Design */}
+      <section className="bg-black text-white py-20 md:py-32">
         <div className="container-custom">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Commercial Apartment <span className="text-primary-yellow">Repair Services</span>
+          {/* Split Heading */}
+          <div className="mb-8">
+            <h1 className="text-5xl md:text-6xl font-bold flex items-center gap-8 md:gap-16 mb-8 flex-wrap md:flex-nowrap">
+              <span className="text-primary-yellow whitespace-nowrap">Services</span>
+              <span className="text-primary-yellow whitespace-nowrap">Repair</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          </div>
+
+          {/* Descriptive Text */}
+          <div className="max-w-2xl mb-10">
+            <p className="text-lg md:text-xl text-white leading-relaxed">
               Licensed contractor for multi-family property repairs. All trades, one contractor, complete compliance with bank-mandated inspections.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/get-quote" className="btn-primary">
-                Get Emergency Quote
-              </Link>
-              <Link href="/contact" className="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-black">
-                Schedule Consultation
-              </Link>
-            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4">
+            <Link href="/get-quote" className="btn-primary">
+              Get Emergency Quote
+            </Link>
+            <Link href="/contact" className="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-black">
+              Schedule Consultation
+            </Link>
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import StickyMobileCTA from "@/components/ui/StickyMobileCTA";
+import ChatWidget from "@/components/ai-chat/ChatWidget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
         <div className="pt-[120px]">{children}</div>
         <Footer />
         <StickyMobileCTA />
+        <ChatWidget />
       </body>
     </html>
   );
