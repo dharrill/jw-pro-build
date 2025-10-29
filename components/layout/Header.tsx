@@ -64,7 +64,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap ${
+                className={`px-4 py-3 rounded-lg font-medium transition-colors whitespace-nowrap min-h-[44px] inline-flex items-center ${
                   pathname === link.href
                     ? "bg-primary-yellow text-black"
                     : "text-accent-gray hover:bg-gray-100"
@@ -79,7 +79,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <a
               href="tel:2193448058"
-              className="text-accent-gray font-semibold hover:text-black transition-colors flex items-center gap-2 whitespace-nowrap"
+              className="text-accent-gray font-semibold hover:text-black transition-colors flex items-center gap-2 whitespace-nowrap min-h-[44px] px-3"
             >
               <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -99,7 +99,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-3 rounded-lg hover:bg-gray-100 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -135,7 +135,7 @@ export default function Header() {
             <div className="mt-4 pt-4 border-t border-gray-200 space-y-3">
               <a
                 href="tel:2193448058"
-                className="flex items-center justify-center gap-2 py-3 text-accent-gray font-semibold"
+                className="flex items-center justify-center gap-2 py-3 text-accent-gray font-semibold min-h-[44px]"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
