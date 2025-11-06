@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SolutionSection() {
   return (
     <section className="section bg-background-warm">
@@ -75,9 +77,9 @@ export default function SolutionSection() {
 
           {/* CTA */}
           <div className="text-center">
-            <button className="btn-primary text-lg">
+            <Link href="/get-quote" className="btn-primary text-lg inline-block">
               Get Your Emergency Quote Now
-            </button>
+            </Link>
             <p className="text-sm text-accent-gray-light mt-4">
               Response within 2 hours • Quote within 24 hours
             </p>

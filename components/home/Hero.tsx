@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="relative min-h-[600px] md:min-h-[700px] flex items-center bg-black text-white">
@@ -30,12 +32,12 @@ export default function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
-            <button className="btn-primary">
+            <Link href="/get-quote" className="btn-primary text-center">
               Get Emergency Quote
-            </button>
-            <button className="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-black">
+            </Link>
+            <Link href="/process" className="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-black text-center">
               Learn About Our Process
-            </button>
+            </Link>
           </div>
 
           {/* Quick stats */}
