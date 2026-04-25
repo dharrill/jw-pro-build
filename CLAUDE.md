@@ -10,15 +10,13 @@ This is a Next.js website for **JW ProBuild**, a construction company targeting 
 
 ## Technology Stack
 
-- **Framework**: Next.js 14 with App Router
+- **Framework**: Next.js 16 with App Router
 - **Styling**: Tailwind CSS
-- **Components**: React Server Components
-- **Forms**: React Hook Form + Zod validation
-- **Animations**: Framer Motion
-- **AI Chat**: Custom OpenAI GPT-4 integration
-- **Appointment Booking**: Calendly or Cal.com integration
-- **Analytics**: Google Analytics 4
-- **Hosting**: Vercel
+- **Components**: React Server Components (Client Components only when interactive)
+- **Forms**: GoHighLevel embedded forms via `<GHLFormEmbed />` wrapper
+- **Animations**: CSS keyframes (Tailwind utilities); no Framer Motion installed
+- **Tracking**: Google Tag Manager + WhatConverts (call tracking, dynamic number swap)
+- **Hosting**: Vercel (standard SSR/SSG; no static export)
 
 ## Design System
 
@@ -221,43 +219,30 @@ This is a Next.js website for **JW ProBuild**, a construction company targeting 
 
 ```
 /app
-  /(routes)
-    /page.tsx                 # Homepage
-    /get-quote/page.tsx       # Primary landing page
-    /services/page.tsx
-    /lenders/page.tsx
-    /process/page.tsx
-    /about/page.tsx
-    /case-studies/page.tsx
-    /resources/page.tsx
-    /contact/page.tsx
-  /api
-    /chat/route.ts            # AI chat API endpoint
-    /forms/route.ts           # Form submission handler
+  /page.tsx                 # Homepage
+  /layout.tsx               # Root layout (GTM + WhatConverts injected here)
+  /globals.css
+  /get-quote/page.tsx       # Primary lead-capture page (uses GHLFormEmbed)
+  /services/page.tsx
+  /lenders/page.tsx
+  /process/page.tsx
+  /about/page.tsx
+  /contact/page.tsx
+  /privacy/page.tsx         # Placeholder
+  /terms/page.tsx           # Placeholder
 /components
   /forms
-    /LeadCaptureForm.tsx
-    /LenderPartnershipForm.tsx
-    /ContactForm.tsx
-  /ai-chat
-    /ChatWidget.tsx
-    /ChatWindow.tsx
+    /GHLFormEmbed.tsx       # GoHighLevel form wrapper, takes formId prop
+  /home                     # Home page sections (one-off)
   /layout
-    /Header.tsx
-    /Footer.tsx
-    /Navigation.tsx
+    /Header.tsx, Footer.tsx
   /ui
-    /Button.tsx
-    /Card.tsx
-    /Badge.tsx
+    /Logo.tsx, StickyMobileCTA.tsx
+/content
+  /home.ts                  # Typed content for the home page (Hero modeled in Phase 1)
 /lib
-  /schemas
-    /lead-form-schema.ts
-  /ai-training-data.ts        # Pre-training content for chat
-  /utils.ts
-/public
-  /images
-  /fonts
+  /analytics.ts             # pushEvent() helper for dataLayer
+  /ghl-form-ids.ts          # Typed form ID constants from env
 ```
 
 ## Critical Implementation Notes

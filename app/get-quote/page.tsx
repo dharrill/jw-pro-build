@@ -1,4 +1,5 @@
-import LeadCaptureForm from "@/components/forms/LeadCaptureForm";
+import GHLFormEmbed from "@/components/forms/GHLFormEmbed";
+import { GHL_FORM_IDS } from "@/lib/ghl-form-ids";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -108,8 +109,13 @@ export default function GetQuotePage() {
 
         {/* Right Side - Form (Sticky on desktop) */}
         <div className="bg-white px-6 py-12 md:px-12 lg:px-16 lg:py-20">
-          <div className="max-w-xl mx-auto lg:mx-0">
-            <LeadCaptureForm />
+          <div className="max-w-xl mx-auto lg:mx-0 lg:sticky lg:top-32">
+            {/* TODO: Replace GHL_FORM_IDS.QUOTE placeholder with real form ID once GHL form is built */}
+            <GHLFormEmbed
+              formId={GHL_FORM_IDS.QUOTE}
+              formTitle="JW ProBuild Quote Request"
+              formHeight={900}
+            />
           </div>
         </div>
       </div>

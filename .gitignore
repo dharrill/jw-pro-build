@@ -8,7 +8,7 @@ node_modules
 
 # Next.js
 /.next/
-# /out/ - Commenting out to commit static build files
+/out/
 
 # Production
 /build
