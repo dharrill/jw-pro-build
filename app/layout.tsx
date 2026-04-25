@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
-const WC_PROFILE_ID = process.env.NEXT_PUBLIC_WHATCONVERTS_PROFILE_ID;
+const WC_SCRIPT_URL = process.env.NEXT_PUBLIC_WHATCONVERTS_SCRIPT_URL;
 
 export default function RootLayout({
   children,
@@ -32,12 +32,17 @@ export default function RootLayout({
         <Script id="datalayer-init" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];`}
         </Script>
-        {WC_PROFILE_ID && (
-          <Script
-            id="whatconverts"
-            strategy="beforeInteractive"
-            src={`https://app.whatconverts.com/w.js?auth=${WC_PROFILE_ID}`}
-          />
+        {WC_SCRIPT_URL && (
+          <>
+            <Script id="whatconverts-init" strategy="beforeInteractive">
+              {`var $wc_load=function(a){return JSON.parse(JSON.stringify(a))},$wc_leads=$wc_leads||{doc:{url:$wc_load(document.URL),ref:$wc_load(document.referrer),search:$wc_load(location.search),hash:$wc_load(location.hash)}};`}
+            </Script>
+            <Script
+              id="whatconverts"
+              strategy="beforeInteractive"
+              src={WC_SCRIPT_URL}
+            />
+          </>
         )}
         {GTM_ID && (
           <Script id="gtm" strategy="afterInteractive">
