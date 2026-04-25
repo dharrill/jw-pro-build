@@ -11,8 +11,9 @@ interface GHLFormEmbedProps {
   className?: string;
 }
 
-const GHL_EMBED_HOST = "https://link.msgsndr.com";
-const GHL_EMBED_SCRIPT = "https://link.msgsndr.com/js/form_embed.js";
+const GHL_EMBED_HOST =
+  process.env.NEXT_PUBLIC_GHL_EMBED_HOST ?? "https://connect.bekindlocal.com";
+const GHL_EMBED_SCRIPT = `${GHL_EMBED_HOST}/js/form_embed.js`;
 
 export default function GHLFormEmbed({
   formId,
